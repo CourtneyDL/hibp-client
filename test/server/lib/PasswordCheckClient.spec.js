@@ -7,7 +7,7 @@ import test_data from './PasswordCheckClient.data';
 
 describe('server/lib/PasswordCheckClient', function () {
     let sandbox;
-    beforeEach(() => sandbox = sinon.sandbox.create());
+    beforeEach(() => sandbox = sinon.createSandbox());
     afterEach(() => sandbox.restore());
 
     const api_client = new PasswordCheckClient('password1234');

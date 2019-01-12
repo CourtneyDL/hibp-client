@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 class ApiClent {
-    constructor (base_url = '') {
+    constructor (base_url = 'https://haveibeenpwned.com/api/v2/') {
         this.base_url = base_url;
     }
 

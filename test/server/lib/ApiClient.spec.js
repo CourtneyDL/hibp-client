@@ -6,14 +6,14 @@ import ApiClient from '../../../server/lib/ApiClient';
 
 describe('server/lib/ApiClient', function () {
     let sandbox;
-    beforeEach(() => sandbox = sinon.sandbox.create());
+    beforeEach(() => sandbox = sinon.createSandbox());
     afterEach(() => sandbox.restore());
 
     const api_client = new ApiClient();
     
     it('should generate URL', function () {
         const api_url = api_client.getURL();
-        expect(api_url).to.equal('');
+        expect(api_url).to.equal('https://haveibeenpwned.com/api/v2/');
     });
     
     it('should process response', function () {
