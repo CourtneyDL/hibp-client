@@ -3,6 +3,7 @@ const path = require('path');
 const cors = require('cors');
 
 const ApiClient = require('./lib/ApiClient');
+const PasswordCheckClient = require('./lib/PasswordCheckClient');
 
 const port = 4000;
 const ui_directory = path.resolve(__dirname, '../ui/build');
@@ -26,6 +27,17 @@ app.post('/test', (req, res) => {
             request: req.body,
             result: api_client.complete(),
         });
+    } catch (e) {
+        console.error(e);
+        res.sendStatus(500);
+    }
+});
+
+app.post('/search/password', async (req, res) => {
+    try{
+        const api_client = new PasswordCheckClient(req.body.password);
+        const result = await api_client.complete();
+        res.json(result);
     } catch (e) {
         console.error(e);
         res.sendStatus(500);
