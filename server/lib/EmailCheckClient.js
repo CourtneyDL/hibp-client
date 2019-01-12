@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+const axios = require('axios');
 const ApiClient = require('./ApiClient');
 
 class EmailCheckClient extends ApiClient {
@@ -14,13 +14,21 @@ class EmailCheckClient extends ApiClient {
         return `${super.getURL()}${email_address}`;
     }
 
+    async makeRequest (url = this.getURL()) {
+        return axios.get(url, {
+            headers: {
+                'User-Agent': 'hibp-client-courtneydl',
+            }
+        });
+    }
+
     processResponse () {
         const self = this;
 
         const result = this.email_addresses.reduce((output, email_address) => {
-            const response_data = self.response_data[email_address];
+            const response_data = self.response_data[email_address] || [];
             
-            output.email_addresses[email_address] = response_data ? response_data.map(breach => breach.Name) : [];
+            output.email_addresses[email_address] = response_data.map(breach => breach.Name);
             response_data.forEach(breach => output.breaches[breach.Name] = breach);
 
             return output;

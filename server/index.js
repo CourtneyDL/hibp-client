@@ -3,6 +3,7 @@ const path = require('path');
 const cors = require('cors');
 
 const ApiClient = require('./lib/ApiClient');
+const EmailCheckClient = require('./lib/EmailCheckClient');
 const PasswordCheckClient = require('./lib/PasswordCheckClient');
 
 const port = 4000;
@@ -33,11 +34,20 @@ app.post('/test', (req, res) => {
     }
 });
 
+app.post('/search/email', async (req, res) => {
+    try{
+        const api_client = new EmailCheckClient(req.body.email_addresses);
+        res.json(await api_client.complete());
+    } catch (e) {
+        console.error(e);
+        res.sendStatus(500);
+    }
+});
+
 app.post('/search/password', async (req, res) => {
     try{
         const api_client = new PasswordCheckClient(req.body.password);
-        const result = await api_client.complete();
-        res.json(result);
+        res.json(await api_client.complete());
     } catch (e) {
         console.error(e);
         res.sendStatus(500);
