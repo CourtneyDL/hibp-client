@@ -20,6 +20,7 @@ const {
 export const initial_state = {
     query: '',
     mode: 'email',
+    previous_mode: null,
     query_list: [],
     disabled: false,
     show_list: false,
@@ -50,6 +51,7 @@ const actionsMap = {
         return { 
             ...state,
             mode,
+            previous_mode: state.mode,
             query,
             query_list,
             show_list,

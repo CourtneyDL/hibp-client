@@ -10,6 +10,7 @@ import { types as search_action_types, creators as search_actions } from 'state/
 export function* watchSearch() {
     yield takeEvery(search_action_types.SEARCH_START, performSearch);
     yield takeEvery(search_action_types.SEARCH_RESET, resetResults);
+    yield takeEvery(search_action_types.SEARCH_MODE, handleModeChange);
 }
 
 export function* performSearch () {
@@ -68,4 +69,12 @@ function* performPasswordSearch (query) {
 function* resetResults () {
     yield put(email_actions.reset());
     yield put(password_actions.reset());
+}
+
+function* handleModeChange () {
+    const { mode, previous_mode } = yield select(state => state.search);
+    console.log(`handleModeChange - ${previous_mode} => ${mode}`);
+    if (previous_mode && mode !== previous_mode) {
+        yield call(resetResults);
+    }
 }
