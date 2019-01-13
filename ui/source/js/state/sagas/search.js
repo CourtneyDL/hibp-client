@@ -2,6 +2,7 @@ import { takeEvery, put, select, call } from 'redux-saga/effects';
 
 import api from 'lib/ApiClient';
 
+import { creators as email_actions } from 'state/actions/email';
 import { creators as password_actions } from 'state/actions/password';
 import { types as search_action_types, creators as search_actions } from 'state/actions/search';
 
@@ -34,10 +35,10 @@ function* performEmailSearch (query, query_list) {
         email_addresses.push(query);
     }
 
-    const result = yield api.searchEmail(email_addresses);
-    console.log('performEmailSearch - result' , result);
-    if (result.success) {
-        //TODO Push results to state
+    const response = yield api.searchEmail(email_addresses);
+    console.log('performEmailSearch - response' , response);
+    if (response.success) {
+        yield put(email_actions.update(response.result));
         yield put(search_actions.complete());
     } else {
         throw 'performEmailSearch Request failed';
@@ -46,10 +47,10 @@ function* performEmailSearch (query, query_list) {
 
 function* performPasswordSearch (query) {
     console.log('performPasswordSearch');
-    const result = yield api.searchPassword(query);
-    console.log('performPasswordSearch - result' , result);
-    if (result.success) {
-        yield put(password_actions.update(result.result));
+    const response = yield api.searchPassword(query);
+    console.log('performPasswordSearch - response' , response);
+    if (response.success) {
+        yield put(password_actions.update(response.result));
         yield put(search_actions.complete());
     } else {
         throw 'performPasswordSearch Request failed';
