@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom';
 
 import { creators as breach_actions } from 'state/actions/breaches';
 
+import BreachInfo from 'components/Breach/BreachInfo';
+
 class Breach extends Component {
     static propTypes = {
         breach: PropTypes.object,
@@ -35,16 +37,15 @@ class Breach extends Component {
     }
 
     render () {
-        const { name, failed, loading, breach } = this.props;
+        const { failed, loading, breach } = this.props;
 
         return (
             <div className="container">
-                <h3>BREACH: {name}</h3>
                 <NavLink className="btn btn-secondary" to="/">Back to Search</NavLink>
                 {loading ? <div className="alert alert-info">Loading...</div> : null}
                 {failed ? <div className="alert alert-danger">Information could not be found for this breach</div> : null}
                 {breach ? 
-                    <h4>{breach.Title}</h4>
+                    <BreachInfo {...{ breach }}/>
                     : null
                 }
             </div>
