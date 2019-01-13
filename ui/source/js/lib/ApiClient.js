@@ -3,18 +3,22 @@ import _ from 'lodash/object';
 
 const base_url = window.location.origin === 'http://localhost:3000' ? 'http://localhost:4000' : window.location.origin;
 
-const makeRequest = (endpoint, data) => {
-    return axios.post(`${base_url}${endpoint}`, data)
+const makeGETRequest = endpoint => makeRequest('get', endpoint);
+const makePOSTRequest = (endpoint, data) => makeRequest('post', endpoint, data);
+const makeRequest = (type, endpoint, data) => {
+    return axios[type](`${base_url}${endpoint}`, data)
         .then(result => _.get(result, 'data', { success: false }));
 };
 
-export const searchPassword = (password) => makeRequest('/search/password', { password });
-export const searchEmail = (email_addresses) => makeRequest('/search/email', { email_addresses });
+export const getBreach = name => makeGETRequest(`/breach/${name}`);
+export const searchPassword = password => makePOSTRequest('/search/password', { password });
+export const searchEmail = email_addresses => makePOSTRequest('/search/email', { email_addresses });
 
-export const test = () => makeRequest('/test');
+export const test = () => makePOSTRequest('/test');
 
 export default {
     test,
+    getBreach,
     searchEmail,
     searchPassword,
 };

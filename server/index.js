@@ -54,7 +54,12 @@ app.post('/search/password', async (req, res) => {
 app.get('/breach/:name', async (req, res) => {
     try{
         const api_client = new BreachClient(req.params.name);
-        res.json(await api_client.complete());
+        const result = await api_client.complete();
+        res.json({
+            success: true,
+            request: req.params.name,
+            result,
+        });
     } catch (e) {
         console.error(e);
         res.sendStatus(500);

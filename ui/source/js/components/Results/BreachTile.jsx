@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 export default class BreachTile extends Component {
     static propTypes = {
@@ -19,11 +20,12 @@ export default class BreachTile extends Component {
             name, logo, title
         } = this.props;
 
-        //TODO Link to breach view
         return (
             <div>
-                <img src={logo} alt={title} />
-                <h4>{title}</h4>
+                <NavLink to={`/breach/${name}`}>
+                    <img src={logo} alt={title} />
+                    <h4>{title}</h4>
+                </NavLink>
             </div>
         );
     }
