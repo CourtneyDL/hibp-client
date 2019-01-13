@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import PasswordResults from 'containers/Results/PasswordResults';
+import EmailResults from 'containers/Results/EmailResults';
 import SearchForm from 'containers/Search/SearchForm';
 import SearchList from 'containers/Search/SearchList';
 
@@ -24,6 +25,7 @@ class Search extends Component {
                     : null}
                 <SearchList/>
                 <PasswordResults/>
+                <EmailResults/>
             </div>
         );
     }
