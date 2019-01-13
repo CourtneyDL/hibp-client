@@ -8,7 +8,7 @@ const {
     BASIC_FAIL,
 } = types;
 
-export const initial_State = {
+export const initial_state = {
     loading: false,
     failed: false,
     count: 0,
@@ -39,7 +39,7 @@ const actionsMap = {
     },
 };
 
-export default function reducer(state = initial_State, action = {}) {
+export default function reducer(state = initial_state, action = {}) {
     const fn = actionsMap[action.type];
     return fn ? fn(state, action) : state;
 }

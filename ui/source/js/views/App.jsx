@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Basic from 'views/Basic';
+import Search from 'views/Search';
 
 const public_path = '/';
 let base_name = '/';
@@ -11,8 +12,8 @@ if (PUBLIC_URL && PUBLIC_URL !== base_name) {
 }
 
 export const route_codes = {
-    BASIC: public_path,
-    // SEARCH: `${public_path}search`,
+    SEARCH: public_path,
+    BASIC: `${public_path}test`,
 };
 
 export default class App extends Component {
@@ -24,10 +25,14 @@ export default class App extends Component {
         return (
             <BrowserRouter basename={base_name}>
                 <div>
-                    <Switch>
-                        <Route exact path={ route_codes.BASIC } component={ Basic } />
-                        <Redirect to={ route_codes.BASIC }/>
-                    </Switch>
+                    <h2>have I been pwned?</h2>
+                    <div>
+                        <Switch>
+                            <Route exact path={ route_codes.BASIC } component={ Basic } />
+                            <Route exact path={ route_codes.SEARCH } component={ Search } />
+                            <Redirect to={ route_codes.SEARCH }/>
+                        </Switch>
+                    </div>
                 </div>
             </BrowserRouter>
         );

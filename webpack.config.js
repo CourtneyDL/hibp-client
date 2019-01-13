@@ -185,6 +185,7 @@ module.exports = {
             jsSourcePath,
         ],
         alias: {
+            'containers' : path.join(jsSourcePath, 'containers'),
             'components' : path.join(jsSourcePath, 'components'),
             'dev'        : path.join(jsSourcePath, 'dev'),
             'libs'       : path.join(jsSourcePath, 'libs'),

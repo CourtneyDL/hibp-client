@@ -6,6 +6,7 @@
         "paths": {
             "*": [
                 "*",
+                "containers/*",
                 "components/*",
                 "dev/*",
                 "libs/*",
