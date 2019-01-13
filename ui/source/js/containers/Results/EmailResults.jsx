@@ -5,25 +5,31 @@ import _ from 'lodash/object';
 
 import EmailResult from 'components/Results/EmailResult';
 
+import { creators as email_actions } from 'state/actions/email';
+
 class EmailResults extends Component {
     static propTypes = {
         active: PropTypes.bool,
         results: PropTypes.array,
+        toggle: PropTypes.func,
     }
 
     static defaultProps = {
         active: false,
         results: [],
+        toggle: () => {},
     };
 
     render () {
         const {
-            active, results
+            active, results, toggle
         } = this.props;
 
         const emails_results = results.map((result, index) => {
             return (
-                <EmailResult key={`email-result-${index}`} emailAddress={result.email_address} breaches={result.breaches}/>
+                <EmailResult key={`email-result-${index}`} 
+                    emailAddress={result.email_address} breaches={result.breaches}
+                    expanded={result.expanded} toggle={toggle}/>
             );
         });
         
@@ -48,7 +54,8 @@ export default connect(
 
             return {
                 email_address,
-                breaches
+                breaches,
+                expanded: _.get(state, `email.expanded_view['${email_address}']`, false),
             };
         });
         
@@ -56,5 +63,8 @@ export default connect(
             active: state.email.active,
             results,
         }
-    }
+    },
+    dispatch => ({
+        toggle: (email_address) => dispatch(email_actions.toggle(email_address)),
+    })
 )(EmailResults);
