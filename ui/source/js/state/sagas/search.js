@@ -12,6 +12,11 @@ export function* watchSearch() {
 
 export function* performSearch () {
     console.log('performSearch');
+    
+    //Reset results UI
+    yield put(email_actions.reset());
+    yield put(password_actions.reset());
+
     const { mode, query, query_list } = yield select(state => state.search);
 
     try {

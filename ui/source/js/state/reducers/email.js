@@ -27,6 +27,7 @@ const actionsMap = {
 
         return { 
             ...state,
+            active: true,
             email_addresses,
             results: result.email_addresses,
             expanded_view,
