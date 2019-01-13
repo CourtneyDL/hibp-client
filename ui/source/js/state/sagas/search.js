@@ -2,6 +2,7 @@ import { takeEvery, put, select, call } from 'redux-saga/effects';
 
 import api from 'lib/ApiClient';
 
+import { creators as password_actions } from 'state/actions/password';
 import { types as search_action_types, creators as search_actions } from 'state/actions/search';
 
 export function* watchSearch() {
@@ -48,7 +49,7 @@ function* performPasswordSearch (query) {
     const result = yield api.searchPassword(query);
     console.log('performPasswordSearch - result' , result);
     if (result.success) {
-        //TODO Push results to state
+        yield put(password_actions.update(result.result));
         yield put(search_actions.complete());
     } else {
         throw 'performPasswordSearch Request failed';
