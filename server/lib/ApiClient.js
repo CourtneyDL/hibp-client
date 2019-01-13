@@ -14,7 +14,11 @@ class ApiClent {
     }
 
     async makeRequest (url = this.getURL()) {
-        return axios.get(url);
+        return axios.get(url, {
+            headers: {
+                'User-Agent': 'hibp-client-courtneydl',
+            }
+        });
     }
 
     processResponse ({ data }) {

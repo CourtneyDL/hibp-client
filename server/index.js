@@ -3,6 +3,7 @@ const path = require('path');
 const cors = require('cors');
 
 const ApiClient = require('./lib/ApiClient');
+const BreachClient = require('./lib/BreachClient');
 const EmailCheckClient = require('./lib/EmailCheckClient');
 const PasswordCheckClient = require('./lib/PasswordCheckClient');
 
@@ -15,10 +16,6 @@ const server = require('http').createServer(app);
 app.use(express.json());
 app.use(cors());//Allows all requests
 app.use('/', express.static(ui_directory));
-
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(ui_directory, 'index.html'));
-});
 
 app.post('/test', (req, res) => {
     try{
@@ -52,6 +49,21 @@ app.post('/search/password', async (req, res) => {
         console.error(e);
         res.sendStatus(500);
     }
+});
+
+app.get('/breach/:name', async (req, res) => {
+    try{
+        const api_client = new BreachClient(req.params.name);
+        res.json(await api_client.complete());
+    } catch (e) {
+        console.error(e);
+        res.sendStatus(500);
+    }
+});
+
+//All GET requests load the react app unless otherwise specified
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(ui_directory, 'index.html'));
 });
 
 server.listen(port, () => {

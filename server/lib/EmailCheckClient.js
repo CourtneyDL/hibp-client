@@ -14,14 +14,6 @@ class EmailCheckClient extends ApiClient {
         return `${super.getURL()}${email_address}`;
     }
 
-    async makeRequest (url = this.getURL()) {
-        return axios.get(url, {
-            headers: {
-                'User-Agent': 'hibp-client-courtneydl',
-            }
-        });
-    }
-
     processResponse () {
         const self = this;
 
