@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import _ from 'lodash/object';
+
+import EmailResult from 'components/Results/EmailResult';
 
 class EmailResults extends Component {
     static propTypes = {
         active: PropTypes.bool,
-        email_addresses: PropTypes.array,
-        results: PropTypes.object,
+        results: PropTypes.array,
     }
 
     static defaultProps = {
         active: false,
-        email_addresses: [],
-        results: {},
+        results: [],
     };
 
     render () {
         const {
-            active, email_addresses, results
+            active, results
         } = this.props;
 
-        const emails_results = email_addresses.map((email_address, index) => {
-            const count = results[email_address].length;
-
+        const emails_results = results.map((result, index) => {
             return (
-                <div key={`email-result-${index}`}>
-                    <h3>{email_address}</h3>
-                    <h4>{`${count} breached site${count === 1 ? '' : 's'}`}</h4>
-                </div>
+                <EmailResult key={`email-result-${index}`} emailAddress={result.email_address} breaches={result.breaches}/>
             );
         });
         
@@ -40,9 +36,25 @@ class EmailResults extends Component {
 }
 
 export default connect(
-    state => ({
-        active: state.email.active,
-        email_addresses: state.email.email_addresses,
-        results: state.email.results,
-    }),
+    state => {
+        const email_addresses = state.email.email_addresses;
+
+        const results = email_addresses.map((email_address) => {
+            const breach_names = _.get(state, `email.results['${email_address}']`, []);
+            const breaches = breach_names.map(breach => {
+                const { Name:name, Title:title, LogoPath:logo } = state.breaches.data[breach];
+                return { name, title, logo };
+            });
+
+            return {
+                email_address,
+                breaches
+            };
+        });
+        
+        return {
+            active: state.email.active,
+            results,
+        }
+    }
 )(EmailResults);
