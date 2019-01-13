@@ -1,0 +1,38 @@
+.box--modes {
+    margin-top: 10px;
+}
+
+.search-mode {
+    &__label {
+        font-size: 20px;
+    }
+}
+
+.container--search-form {
+    max-width: 680px;
+    padding: 0px;
+}
+
+.container--search-list {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.search-list-items {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.item {
+    &--search-list-item {
+        margin-bottom: 5px;
+
+        &:last-child {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__btn {
+        margin-right: 5px;
+    }
+}

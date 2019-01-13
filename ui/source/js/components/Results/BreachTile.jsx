@@ -21,10 +21,12 @@ export default class BreachTile extends Component {
         } = this.props;
 
         return (
-            <div>
-                <NavLink to={`/breach/${name}`}>
-                    <img src={logo} alt={title} />
-                    <h4>{title}</h4>
+            <div className="item item--breach-tile breach-tile breach-tile--results">
+                <NavLink className="breach-tile__link" to={`/breach/${name}`}>
+                    <div className="breach-tile__image-outer">
+                        <div className="breach-tile__image" style={{backgroundImage: `url('${logo}')`}} alt={title} />
+                    </div>
+                    <h4 className="breach-tile__title">{title}</h4>
                 </NavLink>
             </div>
         );

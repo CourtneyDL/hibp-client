@@ -61,11 +61,11 @@ export default class SearchInput extends Component {
                 <input className="form-control" 
                     {...{ placeholder, type, disabled }}
                     value={query} onChange={this.onChange} onKeyUp={this.onKeyUp}/>
-                <span className="input-group-btn">
+                <div className="input-group-append">
                     {mode === 'email' ? <button className="btn btn-secondary" type="button" disabled={disabled} onClick={this.onAddClick}>Add to List</button> : null}
                     <button className="btn btn-primary" type="button" disabled={disabled} onClick={this.onSearchClick}>Search</button>
                     <button className="btn btn-danger" type="button" disabled={disabled} onClick={this.onResetClick}>Reset</button>
-                </span>
+                </div>
             </div>
         );
     }

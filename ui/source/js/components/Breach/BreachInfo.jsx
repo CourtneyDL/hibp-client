@@ -4,12 +4,14 @@ import moment from 'moment';
 
 const BreachInfo = ({ breach }) => {
     return (
-        <div>
-            <div>
-                <img src={breach.LogoPath} alt={breach.Title}/>
-                <h4>{breach.Title}</h4>
+        <div className="box box--breach-info">
+            <div className="breach-tile breach-tile--breach-info">
+                <div className="breach-tile__image-outer">
+                    <div className="breach-tile__image" style={{backgroundImage: `url('${breach.LogoPath}')`}} alt={breach.Title} />
+                </div>
+                <h4 className="breach-tile__title">{breach.Title}</h4>
             </div>
-            <table className="table table-striped">
+            <table className="table table-bordered">
                 <tbody>
                     {
                         Object.keys(breach).reduce((rows, prop) => {

@@ -24,7 +24,7 @@ export default class SearchModes extends Component {
         } = this.props;
 
         return (
-            <div className="container">
+            <div className="box box--modes text-center">
                 <SearchMode value="email" {...{disabled, onChange}} checked={mode === 'email'}>Email</SearchMode>
                 <SearchMode value="password" {...{disabled, onChange}} checked={mode === 'password'}>Password</SearchMode>
             </div>

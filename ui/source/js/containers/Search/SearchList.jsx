@@ -47,14 +47,14 @@ class SearchList extends Component {
         const show_list = mode === 'email' && this.props.show_list && list_items.length > 0;
 
         return (
-            <div className="container">
-                <div className={`container${show_list ? '' : ' d-none'}`}>
+            <div className="container container--search-list">
+                <div className={`container text-center${show_list ? '' : ' d-none'}`}>
                     <h3>Searching pwnage for</h3>
-                    <div>
+                    <div className="search-list-items text-left">
                         { list_items }
                     </div>
                 </div>
-                <div className={`container${list_items.length > 0 && results_active ? '' : ' d-none'}`}>
+                <div className={`container text-center${list_items.length > 0 && results_active ? '' : ' d-none'}`}>
                     { this.props.show_list ? 
                         <div className="btn btn-secondary" onClick={this.onHideClick}>Hide Email List</div>
                         :

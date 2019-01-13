@@ -1,0 +1,33 @@
+.results {
+    padding-bottom: 50px;
+
+    &--password {
+        margin-top: 20px;
+    }
+
+    &__main-title {
+        font-size: 40px;
+    }
+    &__sub-title {
+        font-size: 24px;
+    }
+}
+
+.item--email-result-container {
+    border: 1px white solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.item--email-result {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item__btn--email-result {
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 0;
+}

@@ -26,8 +26,8 @@ export default class App extends Component {
     render() {
         return (
             <BrowserRouter basename={base_name}>
-                <div>
-                    <h2>have I been pwned?</h2>
+                <div className="app">
+                    <h2 className="title">have I been pwned?</h2>
                     <div>
                         <Switch>
                             <Route exact path={ route_codes.BASIC } component={ Basic } />

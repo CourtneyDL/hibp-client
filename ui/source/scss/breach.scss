@@ -1,0 +1,61 @@
+.box--breach-info {
+    margin-top: 20px;
+
+    //Deviation from BEM as this HTML is dangerously inserted
+    a {
+        color: darken(#BAC0C2, 20%);
+
+        a:hover {
+            color: darken(#BAC0C2, 30%);
+        }
+    }
+}
+
+.breach-tile {
+    &--results {
+        display: inline-block;
+        padding: 0 5px;
+        vertical-align: top;
+        width: 50%;
+    }
+    
+    &__link {
+        background-color: darken(#BAC0C2, 5%);
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        color: white;
+        display: block;
+        height: 70px;
+        margin-bottom: 5px;
+        overflow: hidden;
+
+        &:hover {
+            color: darken(white, 15%);
+        }
+    }
+
+    &__image-outer {
+        border: 1px solid lightgray;
+        box-sizing: border-box;
+        display: inline-block;
+        height: 60px;
+        margin: 5px 20px 5px 5px;
+        padding: 2px;
+        width: 70px;
+    }
+
+    &__image {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__title {
+        display: inline-block;
+        font-size: 26px;
+        vertical-align: top;
+        width: calc(100% - 120px);
+    }
+}

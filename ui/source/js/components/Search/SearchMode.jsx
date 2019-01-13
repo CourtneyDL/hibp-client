@@ -28,14 +28,14 @@ export default class SearchMode extends Component {
         } = this.props;
 
         return (
-            <div className="form-check form-check-inline">
+            <div className="form-check form-check-inline search-mode">
                 <input 
-                    className="form-check-input" 
+                    className="form-check-input search-mode__input" 
                     type="radio" name="mode"
                     id={`search_mode_${value}`}
                     onChange={this.onChange}
                     {...{ checked, disabled, value }} />
-                <label className="form-check-label" htmlFor={`search_mode_${value}`}>{children}</label>
+                <label className="form-check-label search-mode__label" htmlFor={`search_mode_${value}`}>{children}</label>
             </div>
         );
     }

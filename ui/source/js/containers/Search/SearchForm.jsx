@@ -39,7 +39,7 @@ class SearchForm extends Component {
         } = this.props;
 
         return (
-            <div className="container">
+            <div className="container container--search-form">
                 <SearchInput {...{ query, mode, disabled, updateQuery, addToList, start, reset }}/>
                 <SearchModes {...{ mode, disabled, updateMode }}/>
             </div>

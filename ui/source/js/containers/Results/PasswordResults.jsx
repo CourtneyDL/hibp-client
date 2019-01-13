@@ -29,9 +29,9 @@ class PasswordResults extends Component {
         }
 
         return (
-            <div className={`container ${active ? '' : ' d-none'}`}>
-                <h2>{main_message}</h2>
-                <h3>{sub_message}</h3>
+            <div className={`box box--results box--password-results results results--password ${active ? '' : ' d-none'}`}>
+                <h2 className="text-center results__main-title">{main_message}</h2>
+                <h3 className="text-center results__sub-title">{sub_message}</h3>
             </div>
         );
     }

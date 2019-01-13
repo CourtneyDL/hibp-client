@@ -41,7 +41,9 @@ class Breach extends Component {
 
         return (
             <div className="container">
-                <NavLink className="btn btn-secondary" to="/">Back to Search</NavLink>
+                <div className="box text-right">
+                    <NavLink className="btn btn-secondary" to="/">Back to Search</NavLink>
+                </div>
                 {loading ? <div className="alert alert-info">Loading...</div> : null}
                 {failed ? <div className="alert alert-danger">Information could not be found for this breach</div> : null}
                 {breach ? 

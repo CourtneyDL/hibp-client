@@ -28,8 +28,8 @@ export default class SearchListItem extends Component {
         } = this.props;
 
         return (
-            <div>
-                <button className="btn btn-danger" disabled={disabled} onClick={this.onDeleteClick}>Delete</button>
+            <div className="item item--search-list-item">
+                <button className="btn btn-danger item__btn" disabled={disabled} onClick={this.onDeleteClick}>Delete</button>
                 <span>{children}</span>
             </div>
         );

@@ -35,7 +35,7 @@ class EmailResults extends Component {
         });
         
         return (
-            <div className={`container ${active ? '' : ' d-none'}`}>
+            <div className={`box box--results box--email-results results results--email${active ? '' : ' d-none'}`}>
                 { email_results }
             </div>
         );
