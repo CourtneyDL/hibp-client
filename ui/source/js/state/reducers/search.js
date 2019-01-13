@@ -57,7 +57,7 @@ const actionsMap = {
     },
     [SEARCH_LIST_ADD]: (state, {payload:item=''}) => {
         const query_list = [...state.query_list];
-        if (!query_list.includes(item)) {
+        if (item.length > 0 && !query_list.includes(item)) {
             query_list.push(item);
         }
 
