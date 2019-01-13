@@ -22,7 +22,7 @@ export default class SearchInput extends Component {
         reset: () => {},
     };
 
-    onKeyUp(e) {
+    onKeyUp = e => {
         if (e.keyCode === 13) {
             this.onSearchClick();
         }

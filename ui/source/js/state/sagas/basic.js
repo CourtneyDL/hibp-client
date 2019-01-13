@@ -9,12 +9,8 @@ export function* watchBasic() {
 }
 
 export function* loadBasic () {
-    console.log('loadBasic #1');
     try {
-        console.log('loadBasic #2');
         const result = yield api.test();
-        console.log('loadBasic #3');
-        console.log('api result', result);
         if (result.success) {
             yield put(basic_actions.complete());
         } else {
