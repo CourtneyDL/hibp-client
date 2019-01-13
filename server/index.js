@@ -51,7 +51,7 @@ app.post('/search/password', async (req, res) => {
     }
 });
 
-app.get('/breach/:name', async (req, res) => {
+app.get('/breach/view/:name', async (req, res) => {
     try{
         const api_client = new BreachClient(req.params.name);
         const result = await api_client.complete();

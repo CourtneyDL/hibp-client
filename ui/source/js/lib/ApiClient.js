@@ -10,7 +10,7 @@ const makeRequest = (type, endpoint, data) => {
         .then(result => _.get(result, 'data', { success: false }));
 };
 
-export const getBreach = name => makeGETRequest(`/breach/${name}`);
+export const getBreach = name => makeGETRequest(`/breach/view/${name}`);
 export const searchPassword = password => makePOSTRequest('/search/password', { password });
 export const searchEmail = email_addresses => makePOSTRequest('/search/email', { email_addresses });
 
