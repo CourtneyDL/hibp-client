@@ -25,17 +25,18 @@ class EmailResults extends Component {
             active, results, toggle
         } = this.props;
 
-        const emails_results = results.map((result, index) => {
+        const email_results = results.map((result, index) => {
             return (
                 <EmailResult key={`email-result-${index}`} 
                     emailAddress={result.email_address} breaches={result.breaches}
-                    expanded={result.expanded} toggle={toggle}/>
+                    expanded={result.expanded} toggle={toggle}
+                    hideToggle={results.length === 1}/>
             );
         });
         
         return (
             <div className={`container ${active ? '' : ' d-none'}`}>
-                { emails_results }
+                { email_results }
             </div>
         );
     }

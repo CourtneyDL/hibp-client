@@ -21,7 +21,7 @@ const actionsMap = {
     [EMAIL_UPDATE]: (state, { payload:results }) => {
         const email_addresses = Object.keys(results);
         const expanded_view = email_addresses.reduce((view_obj, email_address) => {
-            return { ...view_obj, [email_address]:false };
+            return { ...view_obj, [email_address]:email_addresses.length === 1 };
         }, {});
 
         return { 

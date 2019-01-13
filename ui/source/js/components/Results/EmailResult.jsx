@@ -5,28 +5,30 @@ import BreachTile from 'components/Results/BreachTile';
 
 export default class EmailResult extends Component {
     static propTypes = {
+        breaches: PropTypes.array,
         emailAddress: PropTypes.string,
         expanded: PropTypes.bool,
-        breaches: PropTypes.array,
+        hideToggle: PropTypes.bool,
         toggle: PropTypes.func,
     }
 
     static defaultProps = {
+        breaches: [],
         emailAddress: '[EMAIL ADDRESS]',
         expanded: false,
-        breaches: [],
+        hideToggle: false,
         toggle: () => {},
     };
 
-    // onToggleClick = () => this.props.toggle(this.props.emailAddress);
     onToggleClick = () => {
-        console.log(`onToggleClick[${this.props.emailAddress}]`);
-        this.props.toggle(this.props.emailAddress);
+        if (!this.props.hideToggle) {
+            this.props.toggle(this.props.emailAddress);
+        }
     }
 
     render () {
         const {
-            emailAddress:email_address, breaches, expanded
+            emailAddress:email_address, breaches, expanded, hideToggle:hide_toggle
         } = this.props;
 
         const count = breaches.length;
@@ -40,7 +42,7 @@ export default class EmailResult extends Component {
                 <div onClick={this.onToggleClick}>
                     <h3>{email_address}</h3>
                     <h4>{`${count} breached site${count === 1 ? '' : 's'}`}</h4>
-                    <div className="btn btn-secondary">{expanded ? 'Close' : 'Open'}</div>
+                    { hide_toggle ? null : <div className="btn btn-secondary">{expanded ? 'Close' : 'Open'}</div> }
                 </div>
                 <div className={expanded ? '' : 'd-none'}>
                     { rendered_breaches }
