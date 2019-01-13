@@ -48,6 +48,7 @@ function* performEmailSearch (query, query_list) {
     if (response.success) {
         yield put(breaches_actions.update(response.result.breaches));
         yield put(email_actions.update(response.result.email_addresses));
+        yield put(search_actions.hideList());
         yield put(search_actions.complete());
     } else {
         throw 'performEmailSearch Request failed';
