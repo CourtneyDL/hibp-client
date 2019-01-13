@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import PasswordResults from 'containers/Results/PasswordResults';
 import SearchForm from 'containers/Search/SearchForm';
 import SearchList from 'containers/Search/SearchList';
 
@@ -22,6 +23,7 @@ class Search extends Component {
                     <div className="alert alert-danger">Sorry, an error occurred performing your search.</div>
                     : null}
                 <SearchList/>
+                <PasswordResults/>
             </div>
         );
     }

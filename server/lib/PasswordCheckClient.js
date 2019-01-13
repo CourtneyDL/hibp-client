@@ -20,7 +20,6 @@ class PasswordCheckClient extends ApiClient {
     }
 
     processResponse ({ data }) {
-        let success = false;
         let result = 0;
 
         if (typeof data === 'string') {
@@ -31,13 +30,12 @@ class PasswordCheckClient extends ApiClient {
                 return line_suffix === password_suffix;
             });
             if (matching_line) {
-                success = true;
                 result = parseInt(matching_line.split(':')[1],10);
             }
         }
 
         return {
-            success,
+            success: true,
             request: this.password,
             result,
         };

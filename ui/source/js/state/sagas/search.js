@@ -9,12 +9,12 @@ import { types as search_action_types, creators as search_actions } from 'state/
 
 export function* watchSearch() {
     yield takeEvery(search_action_types.SEARCH_START, performSearch);
+    yield takeEvery(search_action_types.SEARCH_RESET, resetResults);
 }
 
 export function* performSearch () {
     //Reset results UI
-    yield put(email_actions.reset());
-    yield put(password_actions.reset());
+    yield call(resetResults);
 
     const { mode, query, query_list } = yield select(state => state.search);
 
@@ -62,4 +62,9 @@ function* performPasswordSearch (query) {
     } else {
         throw 'performPasswordSearch Request failed';
     }
+}
+
+function* resetResults () {
+    yield put(email_actions.reset());
+    yield put(password_actions.reset());
 }
