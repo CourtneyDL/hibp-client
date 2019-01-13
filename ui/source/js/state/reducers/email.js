@@ -15,12 +15,11 @@ export const initial_state = {
     email_addresses: [],
     results: {},
     expanded_view: {},
-    breaches: {},
 };
 
 const actionsMap = {
-    [EMAIL_UPDATE]: (state, { payload:result }) => {
-        const email_addresses = Object.keys(result.email_addresses);
+    [EMAIL_UPDATE]: (state, { payload:results }) => {
+        const email_addresses = Object.keys(results);
         const expanded_view = email_addresses.reduce((view_obj, email_address) => {
             return { ...view_obj, [email_address]:false };
         }, {});
@@ -29,9 +28,8 @@ const actionsMap = {
             ...state,
             active: true,
             email_addresses,
-            results: result.email_addresses,
+            results,
             expanded_view,
-            breaches: result.breaches,
         };
     },
     [EMAIL_RESULT_TOGGLE]: (state, { payload:email_address }) => {

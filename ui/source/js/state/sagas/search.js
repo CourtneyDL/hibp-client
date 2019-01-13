@@ -2,6 +2,7 @@ import { takeEvery, put, select, call } from 'redux-saga/effects';
 
 import api from 'lib/ApiClient';
 
+import { creators as breaches_actions } from 'state/actions/breaches';
 import { creators as email_actions } from 'state/actions/email';
 import { creators as password_actions } from 'state/actions/password';
 import { types as search_action_types, creators as search_actions } from 'state/actions/search';
@@ -11,8 +12,6 @@ export function* watchSearch() {
 }
 
 export function* performSearch () {
-    console.log('performSearch');
-    
     //Reset results UI
     yield put(email_actions.reset());
     yield put(password_actions.reset());
@@ -32,8 +31,6 @@ export function* performSearch () {
 }
 
 function* performEmailSearch (query, query_list) {
-    console.log('performEmailSearch');
-
     //Add current search term to list if a list is present
     if (query_list.length > 0 && !query_list.includes(query)) {
         yield put(search_actions.addToList(query));
@@ -48,9 +45,9 @@ function* performEmailSearch (query, query_list) {
     }
 
     const response = yield api.searchEmail(email_addresses);
-    console.log('performEmailSearch - response' , response);
     if (response.success) {
-        yield put(email_actions.update(response.result));
+        yield put(breaches_actions.update(response.result.breaches));
+        yield put(email_actions.update(response.result.email_addresses));
         yield put(search_actions.complete());
     } else {
         throw 'performEmailSearch Request failed';
@@ -58,9 +55,7 @@ function* performEmailSearch (query, query_list) {
 }
 
 function* performPasswordSearch (query) {
-    console.log('performPasswordSearch');
     const response = yield api.searchPassword(query);
-    console.log('performPasswordSearch - response' , response);
     if (response.success) {
         yield put(password_actions.update(response.result));
         yield put(search_actions.complete());
