@@ -41,7 +41,7 @@ class SearchList extends Component {
         const show_list = mode === 'email' && this.props.show_list && list_items.length > 0;
 
         return (
-            <div className={`container${show_list ? '' : ' invisible'}`}>
+            <div className={`container${show_list ? '' : ' d-none'}`}>
                 <h3>Searching pwnage for</h3>
                 <div>
                     { list_items }

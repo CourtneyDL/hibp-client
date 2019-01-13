@@ -28,7 +28,7 @@ class EmailResults extends Component {
         });
         
         return (
-            <div className={`container ${active ? '' : ' invisible'}`}>
+            <div className={`container ${active ? '' : ' d-none'}`}>
                 { emails_results }
             </div>
         );

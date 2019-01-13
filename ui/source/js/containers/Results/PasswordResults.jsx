@@ -29,7 +29,7 @@ class PasswordResults extends Component {
         }
 
         return (
-            <div className={`container ${active ? '' : ' invisible'}`}>
+            <div className={`container ${active ? '' : ' d-none'}`}>
                 <h2>{main_message}</h2>
                 <h3>{sub_message}</h3>
             </div>
