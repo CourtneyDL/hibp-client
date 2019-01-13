@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class SearchModes extends Component {
+export default class SearchMode extends Component {
     static propTypes = {
         children: PropTypes.string,
         checked: PropTypes.bool,
@@ -20,9 +20,11 @@ export default class SearchModes extends Component {
         onChange: () => {},
     };
 
+    onChange = e => this.props.onChange(e.currentTarget.value);
+
     render () {
         const {
-            children, checked, value, onChange
+            children, checked, disabled, value
         } = this.props;
 
         return (
@@ -31,7 +33,8 @@ export default class SearchModes extends Component {
                     className="form-check-input" 
                     type="radio" name="mode"
                     id={`search_mode_${value}`}
-                    {...{ checked, value, onChange }} />
+                    onChange={this.onChange}
+                    {...{ checked, disabled, value }} />
                 <label className="form-check-label" htmlFor={`search_mode_${value}`}>{children}</label>
             </div>
         );

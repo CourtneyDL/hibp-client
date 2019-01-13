@@ -18,11 +18,9 @@ export default class SearchModes extends Component {
         updateMode: () => {},
     };
 
-    onChange = e => this.props.updateMode(e.currentTarget.value);
-
     render () {
         const {
-            mode, disabled, onChange
+            mode, disabled, updateMode:onChange
         } = this.props;
 
         return (

@@ -19,7 +19,7 @@ const {
 
 export const initial_state = {
     query: '',
-    mode: 'password',
+    mode: 'email',
     query_list: [],
     disabled: false,
     show_list: false,
@@ -37,12 +37,14 @@ const actionsMap = {
         //A valid mode change will reset the search form
         let query = '';
         let query_list = [];
+        let show_list = false;
         
-        //Retain current mode and form data if action mode is invalid
-        if (!['email', 'password'].includes(mode)) {
+        //Retain current mode and form data if action mode is invalid or mode hasn't changed
+        if (mode === state.mode || !['email', 'password'].includes(mode)) {
             mode = state.mode;
             query = state.query;
             query_list = state.query_list;
+            show_list = state.show_list;
         }
 
         return { 
@@ -50,15 +52,20 @@ const actionsMap = {
             mode,
             query,
             query_list,
+            show_list,
         };
     },
     [SEARCH_LIST_ADD]: (state, {payload:item=''}) => {
         const query_list = [...state.query_list];
-        query_list.push(item);
+        if (!query_list.includes(item)) {
+            query_list.push(item);
+        }
 
         return { 
             ...state,
-            query_list
+            query_list,
+            //TEMP - When there are search results showing the list could be trigger by a saga
+            show_list: true,
         };
     },
     [SEARCH_LIST_REMOVE]: (state, {payload:index}) => {

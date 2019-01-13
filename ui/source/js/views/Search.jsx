@@ -19,7 +19,7 @@ class Search extends Component {
             <div className="container">
                 <SearchForm/>
                 {this.props.failed ?
-                    <div className="alert alert-danger">Sorry your search failed</div>
+                    <div className="alert alert-danger">Sorry, an error occurred performing your search.</div>
                     : null}
                 <SearchList/>
             </div>

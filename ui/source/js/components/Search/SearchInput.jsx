@@ -40,25 +40,29 @@ export default class SearchInput extends Component {
         } = this.props;
 
         let placeholder;
+        let type;
         switch (mode) {
             case 'email':
                 placeholder = 'Enter an email address';
+                type = 'email';
                 break;
             case 'password':
                 placeholder = 'Enter a password';
+                type = 'password';
                 break;
             default:
                 placeholder = 'Enter a value';
+                type = 'text';
                 break;
         }
 
         return (
             <div className="input-group">
-                <input type="text" className="form-control" 
-                    {...{ placeholder, disabled }}
+                <input className="form-control" 
+                    {...{ placeholder, type, disabled }}
                     value={query} onChange={this.onChange} onKeyUp={this.onKeyUp}/>
                 <span className="input-group-btn">
-                    <button className="btn btn-secondary" type="button" disabled={disabled} onClick={this.onAddClick}>Add to List</button>
+                    {mode === 'email' ? <button className="btn btn-secondary" type="button" disabled={disabled} onClick={this.onAddClick}>Add to List</button> : null}
                     <button className="btn btn-primary" type="button" disabled={disabled} onClick={this.onSearchClick}>Search</button>
                     <button className="btn btn-danger" type="button" disabled={disabled} onClick={this.onResetClick}>Reset</button>
                 </span>
