@@ -19,17 +19,17 @@ export default class SearchListItem extends Component {
     };
 
     onDeleteClick = () => {
-        this.props.onDeleteClick(this.props.index)
+        this.props.onDeleteClick(this.props.index);
     }
 
     render () {
         const {
-            children, disabled, onDeleteClick
+            children, disabled
         } = this.props;
 
         return (
             <div>
-                <button className="btn btn-danger" disabled={disabled} onClick={onDeleteClick}>Delete</button>
+                <button className="btn btn-danger" disabled={disabled} onClick={this.onDeleteClick}>Delete</button>
                 <span>{children}</span>
             </div>
         );

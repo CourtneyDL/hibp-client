@@ -33,6 +33,13 @@ export function* performSearch () {
 
 function* performEmailSearch (query, query_list) {
     console.log('performEmailSearch');
+
+    //Add current search term to list if a list is present
+    if (query_list.length > 0 && !query_list.includes(query)) {
+        yield put(search_actions.addToList(query));
+        query_list = yield select(state => state.search.query_list);
+    }
+
     let email_addresses = [];
     if (query_list.length > 0) {
         email_addresses = [...query_list];
