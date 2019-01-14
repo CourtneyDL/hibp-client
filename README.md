@@ -50,7 +50,7 @@ The unit test suite coverage is currently incomplete with the current code in /t
 
 ## ToDos
 - Restyle UI elements more extensively
-- Delint codebase - unfortunately automatic linting was not running in the editor used for development. At linting profile and script exist however this process has not been completed due to lack of time for retesting the resulting refactored code.
+- Delint codebase - unfortunately automatic linting was not running in the editor used for development. A linting profile and script exist however this process has not been completed due to lack of time for retesting the resulting refactored code.
 - Implement unit testing for all Redux Reducers and React Components
 - Add registration page
 - Add Login page
