@@ -57,12 +57,12 @@ class Breach extends Component {
 
 export default connect(
     (state, own_props) => {
-        const name = own_props.match.params.name;
+        const name = _.get(own_props, 'match.params.name');
         return {
             failed: state.breaches.failed,
             loading: state.breaches.loading,
             name,
-            breach: _.get(state, `breaches.data['${name}']`, null),
+            breach: name ? _.get(state, `breaches.data['${name}']`, null) : null,
         };
     },
     (dispatch) => ({

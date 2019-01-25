@@ -17,7 +17,8 @@ class ApiClent {
         return axios.get(url, {
             headers: {
                 'User-Agent': 'hibp-client-courtneydl',
-            }
+            },
+            validateStatus: status => (status >= 200 && status < 300) || status === 404,
         });
     }
 
