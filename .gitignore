@@ -4,3 +4,5 @@ build
 .module-cache
 *.log*
 _nogit
+Vagrantfile
+Vagrantfile.*
