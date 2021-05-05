@@ -1,10 +1,14 @@
 {
   "title": "This is a title",
-  "body": "This is some text that comes after the title. It tells someone something",
+  "body": "This is some text that comes after the title. It tells someone something.",
   "list": [
     "First Item",
     "Second Item",
     "Third Item",
     "Fourth It- You get the point!"
-  ]
+  ],
+  "another" : {
+    "title": "This is a another title",
+    "body": "This is even more text that comes after the another title. It tells someone something else!"
+  }
 }
