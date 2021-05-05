@@ -11,5 +11,6 @@
     "title": "Ceci est un autre titre",
     "body": "C'est encore plus de texte qui vient après un autre titre. Cela dit autre chose à quelqu'un!"
   },
-  "error": "Quelque chose ne va pas!"
+  "error": "Quelque chose ne va pas!",
+  "invalid": "Ce texte est faux !"
 }
