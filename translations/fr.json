@@ -1,0 +1,15 @@
+{
+  "title": "Ceci est un titre",
+  "body": "C'est un texte qui vient après le titre. Cela dit quelque chose à quelqu'un.",
+  "list": [
+    "Premier élément",
+    "Deuxième élément",
+    "Troisième élément",
+    "Quatrième - Vous obtenez le point!"
+  ],
+  "another" : {
+    "title": "Ceci est un autre titre",
+    "body": "C'est encore plus de texte qui vient après un autre titre. Cela dit autre chose à quelqu'un!"
+  },
+  "error": "Quelque chose ne va pas!"
+}
