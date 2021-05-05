@@ -1,0 +1,10 @@
+{
+  "title": "This is a title",
+  "body": "This is some text that comes after the title. It tells someone something",
+  "list": [
+    "First Item",
+    "Second Item",
+    "Third Item",
+    "Fourth It- You get the point!"
+  ]
+}
