@@ -11,5 +11,6 @@
     "title": "This is a another title",
     "body": "This is even more text that comes after the another title. It tells someone something else!"
   },
-  "error": "Something has gone wrong!"
+  "error": "Something has gone wrong!",
+  "invalid": "This text is wrong!"
 }
