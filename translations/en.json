@@ -1,6 +1,7 @@
 {
     "another": {
         "body": "This is even more text that comes after the another title. It tells someone something else!",
+        "error": "Failure has struck, for shame!",
         "title": "This is another title"
     },
     "body": "This is some text that comes after the title. It tells someone something.",
