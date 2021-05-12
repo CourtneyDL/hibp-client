@@ -1,0 +1,19 @@
+{
+    "another": {
+        "body": "This is even more text that comes after the another title. It tells someone something else!",
+        "error": "Failure has struck, for shame!",
+        "invalidInput": "Input is invalid, my god!",
+        "title": "This is another title"
+    },
+    "body": "This is some text that comes after the title. It tells someone something.",
+    "error": "Something has gone wrong!",
+    "invalid": "This text is wrong!",
+    "list": [
+        "First Item",
+        "Second Item",
+        "Third Item",
+        "Fourth It- You get the point!",
+        "Fifth Item!!"
+    ],
+    "title": "This is a title"
+}
