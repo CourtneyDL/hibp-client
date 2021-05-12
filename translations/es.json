@@ -1,15 +1,16 @@
 {
-  "title": "Este es un título",
-  "body": "Este es un texto que viene después del título. Le dice algo a alguien.",
-  "list": [
-    "Primer punto",
-    "Segundo punto",
-    "Tercer punto"
-  ],
-  "another" : {
-    "title": "Este es otro título",
-    "body": "Este es aún más texto que viene después del otro título. ¡Le dice a alguien otra cosa!"
-  },
-  "error": "¡Algo ha salido mal!",
-  "invalid": "¡Este texto está mal!"
+    "another": {
+        "body": "Este es aún más texto que viene después del otro título. ¡Le dice a alguien otra cosa!",
+        "title": "Este es otro título"
+    },
+    "body": "Este es un texto que viene después del título. Le dice algo a alguien.",
+    "error": "¡Algo ha salido mal!",
+    "invalid": "¡Este texto está mal!",
+    "list": [
+        "Primer punto",
+        "Segundo punto",
+        "Tercer punto",
+        "¡Tú consigues el punto!"
+    ],
+    "title": "Este es un título"
 }
