@@ -4,8 +4,7 @@
   "list": [
     "Premier élément",
     "Deuxième élément",
-    "Troisième élément",
-    "Quatrième - Vous obtenez le point!"
+    "Troisième élément"
   ],
   "another" : {
     "title": "Ceci est un autre titre",
