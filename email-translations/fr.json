@@ -1,0 +1,26 @@
+{
+    "another": {
+        "body": "This is even more text that comes after the another title. It tells someone something else!",
+        "error": "Failure has struck, for shame!",
+        "invalidInput": "Input is invalid, my god!",
+        "title": "This is not French"
+    },
+    "body": "This is some text that comes after the title. It tells someone something.",
+    "error": "Something has gone wrong!",
+    "invalid": "This text is wrong!",
+    "list": [
+        "First Email Item",
+        "Second Email Item",
+        "Third Email Item",
+        "Fourth Email It- You get the point!",
+        "Fifth Email Item!!"
+    ],
+    "list2": [
+        "First Email Item",
+        "Second Email Item",
+        "Third Email Item",
+        "Fourth Email It- You get the point!",
+        "Fifth Email Item!!"
+    ],
+    "title": "This is a title"
+}
