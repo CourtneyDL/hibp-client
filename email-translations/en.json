@@ -9,11 +9,18 @@
     "error": "Something has gone wrong!",
     "invalid": "This text is wrong!",
     "list": [
-        "First Item",
-        "Second Item",
-        "Third Item",
-        "Fourth It- You get the point!",
-        "Fifth Item!!"
+        "First Email Item",
+        "Second Email Item",
+        "Third Email Item",
+        "Fourth Email It- You get the point!",
+        "Fifth Email Item!!"
+    ],
+    "list2": [
+        "First Email Item",
+        "Second Email Item",
+        "Third Email Item",
+        "Fourth Email It- You get the point!",
+        "Fifth Email Item!!"
     ],
     "title": "This is a title"
 }
