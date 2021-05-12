@@ -2,6 +2,7 @@
     "another": {
         "body": "C'est encore plus de texte qui vient après un autre titre. Cela dit autre chose à quelqu'un!",
         "error": "L'échec a frappé, quelle honte !",
+        "invalidInput": "L'entrée est invalide, mon Dieu !",
         "title": "Ceci est un autre titre"
     },
     "body": "C'est un texte qui vient après le titre. Cela dit quelque chose à quelqu'un.",

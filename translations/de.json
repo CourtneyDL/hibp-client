@@ -1,0 +1,18 @@
+{
+    "another": {
+        "body": "Dies ist noch mehr Text, der nach dem anderen Titel kommt. Es sagt jemandem etwas anderes!",
+        "error": "Das Scheitern hat geschlagen, für die Schande!",
+        "invalidInput": "Eingabe ist ungültig, mein Gott!",
+        "title": "Dies ist ein weiterer Titel"
+    },
+    "body": "Dies ist ein Text, der nach dem Titel kommt. Er erzählt jemandem etwas.",
+    "error": "Etwas ist schief gelaufen!",
+    "invalid": "Dieser Text ist falsch!",
+    "list": [
+        "Erster Artikel",
+        "Zweiter Punkt",
+        "Dritter Punkt",
+        "Vierter Es- Sie verstehen den Punkt!"
+    ],
+    "title": "Dies ist ein Titel"
+}
