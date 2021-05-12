@@ -1,0 +1,36 @@
+{
+    "title": {
+        "translation": "Este es un título"
+    },
+    "body": {
+        "translation": "Este es un texto que viene después del título. Le dice algo a alguien."
+    },
+    "list": [
+        {
+            "translation": "Primer punto"
+        },
+        {
+            "translation": "Segundo punto"
+        },
+        {
+            "translation": "Tercer punto"
+        },
+        {
+            "translation": "¡Tú consigues el punto!"
+        }
+    ],
+    "another": {
+        "title": {
+            "translation": "Este es otro título"
+        },
+        "body": {
+            "translation": "Este es aún más texto que viene después del otro título. ¡Le dice a alguien otra cosa!"
+        }
+    },
+    "error": {
+        "translation": "¡Algo ha salido mal!"
+    },
+    "invalid": {
+        "translation": "¡Este texto está mal!"
+    }
+}
