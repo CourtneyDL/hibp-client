@@ -1,15 +1,36 @@
 {
-  "title": "This is a title",
-  "body": "This is some text that comes after the title. It tells someone something.",
-  "list": [
-    "First Item",
-    "Second Item",
-    "Third Item"
-  ],
-  "another" : {
-    "title": "This is a another title",
-    "body": "This is even more text that comes after the another title. It tells someone something else!"
-  },
-  "error": "Something has gone wrong!",
-  "invalid": "This text is wrong!"
+    "title": {
+        "translation": "This is a title"
+    },
+    "body": {
+        "translation": "This is some text that comes after the title. It tells someone something."
+    },
+    "list": [
+        {
+            "translation": "First Item"
+        },
+        {
+            "translation": "Second Item"
+        },
+        {
+            "translation": "Third Item"
+        },
+        {
+            "translation": "Fourth It- You get the point!"
+        }
+    ],
+    "another": {
+        "title": {
+            "translation": "This is another title"
+        },
+        "body": {
+            "translation": "This is even more text that comes after the another title. It tells someone something else!"
+        }
+    },
+    "error": {
+        "translation": "Something has gone wrong!"
+    },
+    "invalid": {
+        "translation": "This text is wrong!"
+    }
 }
