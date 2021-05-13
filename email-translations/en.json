@@ -27,5 +27,10 @@
         "greeting": "Hi {{name}}",
         "intro": "Welcome to Jurassi- I mean this email!",
         "cta": "Do something... please"
+    },
+    "passwordReset": {
+        "greeting": "Hello {{name}}",
+        "intro": "Please click the link below to reset your password",
+        "cta": "Reset Password"
     }
 }
