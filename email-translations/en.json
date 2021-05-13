@@ -1,51 +1,51 @@
 {
-    "another": {
-        "body": "This is even more text that comes after the another title. It tells someone something else!",
-        "error": "Failure has struck, for shame!",
-        "invalidInput": "Input is invalid, my god!",
-        "title": "This is another title"
-    },
-    "body": "This is some text that comes after the title. It tells someone something.",
-    "error": "Something has gone wrong!",
-    "invalid": "This text is wrong!",
-    "list": [
-        "First Email Item",
-        "Second Email Item",
-        "Third Email Item",
-        "Fourth Email It- You get the point!",
-        "Fifth Email Item!!"
-    ],
-    "list2": [
-        "First Email Item",
-        "Second Email Item",
-        "Third Email Item",
-        "Fourth Email It- You get the point!",
-        "Fifth Email Item!!"
-    ],
-    "title": "This is a title",
-    "welcome": {
-        "greeting": "Hi {{name}}",
-        "intro": "Welcome to Jurassi- I mean this email!",
-        "cta": "Do something... please"
-    },
-    "passwordReset": {
-        "greeting": "Hello {{name}}",
-        "intro": "Please click the link below to reset your password",
-        "cta": "Reset Password"
-    },
-    "report": {
-        "greeting": "Hello {{name}}",
-        "intro": "You have a new report to review!!",
-        "cta": "View Report"
-    },
-    "help": {
-        "greeting": "Hey {{name}}",
-        "intro": "You need some help!! (no offense)",
-        "cta": "Open Help Center"
-    },
-    "help2": {
-        "greeting": "Hey {{name}}",
-        "intro": "You need some assitance!!",
-        "cta": "Open Help Center Page"
-    }
+  "another": {
+    "body": "This is even more text that comes after the another title. It tells someone something else!",
+    "error": "Failure has struck, for shame!",
+    "invalidInput": "Input is invalid, my god!",
+    "title": "This is another title"
+  },
+  "body": "This is some text that comes after the title. It tells someone something.",
+  "error": "Something has gone wrong!",
+  "help": {
+    "cta": "Open Help Center",
+    "greeting": "Hey {{name}}",
+    "intro": "You need help now!! (no offense)"
+  },
+  "help2": {
+    "cta": "Open Help Center Page",
+    "greeting": "Hey {{name}}",
+    "intro": "You need some assitance!!"
+  },
+  "invalid": "This text is wrong!",
+  "list": [
+    "First Email Item",
+    "Second Email Item",
+    "Third Email Item",
+    "Fourth Email It- You get the point!",
+    "Fifth Email Item!!"
+  ],
+  "list2": [
+    "First Email Item",
+    "Second Email Item",
+    "Third Email Item",
+    "Fourth Email It- You get the point!",
+    "Fifth Email Item!!"
+  ],
+  "passwordReset": {
+    "cta": "Reset Password",
+    "greeting": "Hello {{name}}",
+    "intro": "Please click the link below to reset your password"
+  },
+  "report": {
+    "cta": "View Report",
+    "greeting": "Hello {{name}}",
+    "intro": "You have a new report to review!!"
+  },
+  "title": "This is a title",
+  "welcome": {
+    "cta": "Do something... please",
+    "greeting": "Hi {{name}}",
+    "intro": "Welcome to Jurassi- I mean this email!"
+  }
 }
