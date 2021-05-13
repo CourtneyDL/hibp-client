@@ -22,5 +22,10 @@
         "Fourth Email It- You get the point!",
         "Fifth Email Item!!"
     ],
-    "title": "This is a title"
+    "title": "This is a title",
+    "welcome": {
+        "greeting": "Hi {{name}}",
+        "intro": "Welcome to Jurassi- I mean this email!",
+        "cta": "Do something... please"
+    }
 }
