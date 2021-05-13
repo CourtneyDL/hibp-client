@@ -35,7 +35,7 @@
     },
     "report": {
         "greeting": "Hello {{name}}",
-        "intro": "You have a new report!!",
+        "intro": "You have a new report to review!!",
         "cta": "View Report"
     },
     "help": {
