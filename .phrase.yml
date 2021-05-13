@@ -11,7 +11,7 @@ phrase:
       project_id: 7b53c17f3e286337bbe8d127f8cba1f4
   pull:
     targets:
-    # Client Cop
+    # Client Copy
     - file: ./translations/<locale_code>.json
       project_id: 527e80a7601a7f99bd54dfdff64efe04
     # Email Copy
