@@ -1,19 +1,28 @@
 phrase:
   access_token: 7dd4ddb864b020f31d5f747f30e96ffdcd4a6ca55033fc7101f323f83849a72b
-  file_format: nested_json  
   push:
     sources:
     # Client Copy
     - file: ./translations/en.json
       project_id: 527e80a7601a7f99bd54dfdff64efe04
+      params:
+        locale_id: "7b459dbb139f0c06988440c481e2bfc7"
+        file_format: nested_json
     # Email Copy
     - file: ./email-translations/en.json
       project_id: 7b53c17f3e286337bbe8d127f8cba1f4
+      params:
+        locale_id: "c8b3c4fdac9ef56680368d7949aa91e7"
+        file_format: nested_json
   pull:
     targets:
     # Client Copy
     - file: ./translations/<locale_code>.json
       project_id: 527e80a7601a7f99bd54dfdff64efe04
+      params:
+        file_format: nested_json
     # Email Copy
     - file: ./email-translations/<locale_code>.json
       project_id: 7b53c17f3e286337bbe8d127f8cba1f4
+      params:
+        file_format: nested_json
