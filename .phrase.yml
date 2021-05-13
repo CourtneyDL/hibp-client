@@ -1,0 +1,26 @@
+phrase:
+  access_token: 7dd4ddb864b020f31d5f747f30e96ffdcd4a6ca55033fc7101f323f83849a72b
+  project_id: 527e80a7601a7f99bd54dfdff64efe04
+  push:
+    sources:
+    - file: ./translations/en.json
+      params:
+        file_format: nested_json
+  pull:
+    targets:
+    - file: ./translations/<locale_code>.json
+      params:
+        file_format: nested_json
+phrase:
+  access_token: 7dd4ddb864b020f31d5f747f30e96ffdcd4a6ca55033fc7101f323f83849a72b
+  project_id: 7b53c17f3e286337bbe8d127f8cba1f4
+  push:
+    sources:
+    - file: ./email-translations/en.json
+      params:
+        file_format: nested_json
+  pull:
+    targets:
+    - file: ./email-translations/<locale_code>.json
+      params:
+        file_format: nested_json
