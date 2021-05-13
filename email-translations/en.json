@@ -42,5 +42,10 @@
         "greeting": "Hey {{name}}",
         "intro": "You need some help!! (no offense)",
         "cta": "Open Help Center"
+    },
+    "help2": {
+        "greeting": "Hey {{name}}",
+        "intro": "You need some assitance!!",
+        "cta": "Open Help Center Page"
     }
 }
