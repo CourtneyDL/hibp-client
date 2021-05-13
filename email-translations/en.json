@@ -32,5 +32,10 @@
         "greeting": "Hello {{name}}",
         "intro": "Please click the link below to reset your password",
         "cta": "Reset Password"
+    },
+    "report": {
+        "greeting": "Hello {{name}}",
+        "intro": "You have a new report!!",
+        "cta": "View Report"
     }
 }
