@@ -37,5 +37,10 @@
         "greeting": "Hello {{name}}",
         "intro": "You have a new report!!",
         "cta": "View Report"
+    },
+    "help": {
+        "greeting": "Hey {{name}}",
+        "intro": "You need help!! (no offense)",
+        "cta": "Open Help Center"
     }
 }

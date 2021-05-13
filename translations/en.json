@@ -15,5 +15,9 @@
         "Fourth It- You get the point!",
         "Fifth Item!!"
     ],
-    "title": "This is a title"
+    "title": "This is a title",
+    "help": {
+      "title": "This is a help title",
+      "intro": "This is help text"
+    }
 }
