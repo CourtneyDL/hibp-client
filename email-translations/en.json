@@ -40,7 +40,7 @@
     },
     "help": {
         "greeting": "Hey {{name}}",
-        "intro": "You need help!! (no offense)",
+        "intro": "You need some help!! (no offense)",
         "cta": "Open Help Center"
     }
 }
